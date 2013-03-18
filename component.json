@@ -1,0 +1,15 @@
+{
+  "name": "dom-data-map",
+  "repo": "timoxley/dom-data-map",
+  "description": "Associate data to elements via selector",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "yields/data": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}
