@@ -15,7 +15,7 @@ var slice = Array.prototype.slice
  * @api public
  */
 
-module.exports = function setDomDataMapContext(context) {
+module.exports = function setDomDataMapContext(context, el) {
 
 	/**
 	 * Calls an iterator `fn` on each Element matching
@@ -33,7 +33,7 @@ module.exports = function setDomDataMapContext(context) {
 	return function domDataMap(selector, fn) {
 		var els = selector
 		if (els instanceof NodeList) els = slice.call(selector)
-		if (typeof selector === 'string') els = module.exports.query(selector)
+		if (typeof selector === 'string') els = module.exports.query(selector, el)
 		els = els || []
 		els.forEach(function(el) {
 			var data = elData(el).get()
@@ -49,6 +49,9 @@ module.exports = function setDomDataMapContext(context) {
  * @api public
  */
 
-module.exports.query = function query(selector) {
-	return slice.call(document.querySelectorAll(selector))
+module.exports.query = function query(selector, el) {
+  if (!el) el = document
+  if (typeof el === 'string') el = module.exports.query(el, document)
+  if (typeof el.length !== 'undefined') el = el[0]
+	return slice.call(el.querySelectorAll(selector))
 }

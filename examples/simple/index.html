@@ -3,9 +3,13 @@
   <head>
   </head>
   <body>
-		<div data-user="Tim" data-userview></div>
-		<div data-user="Bob" data-userview></div>
-
+    <div id="users">
+      <div data-user="Tim" data-userview></div>
+      <div data-user="Bob" data-userview></div>
+    </div>
+    <div id="non-users">
+      <div data-user="Joe" data-userview></div>
+    </div>
 		<script src="../../build/build.js"></script>
     <script>
 			var DDM = require('dom-data-map')
@@ -16,11 +20,13 @@
 					name: 'Tim'
 				}, {
 					name: 'Bob'
-				}]
+        },{
+          name: 'Joe' // won't be listed if scoping works
+        }]
 			}
 
 			// set the context for the domData callbacks
-			var domData = DDM(appData)
+			var domData = DDM(appData, "#users")
 
 			// apply a callback to each matching element
 			// passing the element and its associated data.
