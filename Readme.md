@@ -1,13 +1,12 @@
 # dom-data-map
 
-  Associate arbitrary data with DOM Elements via NodeList or a selector String.
+Associate arbitrary data with DOM Elements via NodeList or a selector String.
 
-	Simple wrapper around [yields/data](https://github.com/yields/data) to
-	add a multiple element/selector interface.
+Simple wrapper around [yields/data](https://github.com/yields/data) to add multiple element/selector interface.
 
 ## Installation
 
-    $ component install timoxley/dom-data-map
+  $ component install timoxley/dom-data-map
 
 ## Example
 
