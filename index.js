@@ -61,7 +61,7 @@ function setParentData(el, data) {
       data = {}
     }
     data.__proto__ = foundData
-
+    elData(el).set(data)
     return setParentData(el.parentNode, foundData)
   }
   return setParentData(el.parentNode, data)
