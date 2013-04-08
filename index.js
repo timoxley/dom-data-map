@@ -51,7 +51,6 @@ module.exports = function DomDataMapContext(context, el) {
 
 module.exports.setParentData = setParentData
 function setParentData(el, data) {
-  console.log('set parent data', el, data)
   if (!el || el.nodeType === Node.DOCUMENT_NODE) return data
   // BAD COUPLING TO yields/data implementation
   // this checks if the element has associated data
