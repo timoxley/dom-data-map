@@ -2,7 +2,7 @@
   "name": "dom-data-map",
   "repo": "timoxley/dom-data-map",
   "description": "Associate data to elements via selector",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "keywords": [],
   "dependencies": {
     "yields/data": "*",
